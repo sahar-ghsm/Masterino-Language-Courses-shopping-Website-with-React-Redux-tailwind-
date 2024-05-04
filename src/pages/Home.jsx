@@ -65,13 +65,6 @@ function Home() {
           <LatestPosts count={3} />
         </div>
       </section>
-      <section className="w-100 mx-auto my-10 bg-slate-300 py-5 pb-10 md:pt-10">
-        <Footer />
-        <div className="mt-5 text-center text-xs md:mt-2 md:text-sm">
-          Copyright © 2024 All rights reserved by Sahar.dev Colorlib
-          Distributed by Themewagon
-        </div>
-      </section>
     </div>
   );
 }

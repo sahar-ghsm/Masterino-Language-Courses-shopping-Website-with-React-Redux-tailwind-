@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
 import Rating from '../../ui/Rating';
+import { COURSE_PAGE } from '../../utils/constants';
 
 function CourseItem({ item }) {
   return (
-    <div className="h-[550px] flex-1 rounded-lg border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800 ">
-      <Link to={`order/${item.id}`}>
-        <img className="h-2/5 w-full rounded-t-lg" src={item.image} />
-      </Link>
+    <Link
+      to={COURSE_PAGE(item.id)}
+      className="flex-1 rounded-lg border border-gray-200 bg-white shadow md:h-[550px] dark:border-gray-700 dark:bg-gray-800 "
+    >
+      <img className="h-2/5 w-full rounded-t-lg" src={item.image} />
       <div className="flex h-3/5 flex-col justify-between px-4 py-1 md:pb-5 md:pt-5">
         <div>
           <h3 className="py-2 text-base font-bold md:py-4 md:text-xl md:font-semibold">
@@ -36,7 +38,7 @@ function CourseItem({ item }) {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

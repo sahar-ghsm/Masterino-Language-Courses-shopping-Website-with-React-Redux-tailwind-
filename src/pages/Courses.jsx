@@ -1,15 +1,25 @@
-import { useLoaderData } from "react-router-dom";
-import { getCourses } from "../services/apiCourses";
-import CourseItem from "../features/courses/CourseItem";
+import { useLoaderData } from 'react-router-dom';
+import { getCourses } from '../services/apiCourses';
+import CourseItem from '../features/courses/CourseItem';
 
 function Courses() {
   const courses = useLoaderData();
+
+  if (!courses?.length)
+    return (
+      <div className="text-center text-base font-semibold text-slate-700 md:text-xl">
+        No Courses are found, Please call Customer service.
+      </div>
+    );
+
   return (
-    <ul>
-      {courses.map((item) => {
-        return <CourseItem key={item.id} item={item} />;
-      })}
-    </ul>
+    <div>
+      <ul className="mx-5 mt-5 flex flex-col justify-center gap-4 md:flex-row">
+        {courses.map((item) => {
+          return <CourseItem key={item.id} item={item} />;
+        })}
+      </ul>
+    </div>
   );
 }
 

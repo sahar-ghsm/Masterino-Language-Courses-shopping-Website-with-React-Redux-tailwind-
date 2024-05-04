@@ -1,24 +1,31 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Home from './pages/Home';
-import Courses, { loader as courseLoader } from './pages/Courses';
-import Course from './pages/Course';
+import Courses, { loader as coursesLoader } from './pages/Courses';
+import Course, { loader as courseLoader } from './pages/Course';
 import Cart from './pages/Cart';
 import CreateOrder, { action as careteOrderAction } from './pages/CreateOrder';
-import Order, { loader as orderLoader } from './pages/Order';
 import Blog, { loader as blogPostsLoader } from './pages/Blog';
 import StaticPages from './pages/StaticPages';
+import CheckoutPage, { action as checkoutAction } from './pages/Checkout';
+import OrderRecievedPage, {
+  loader as orderRecievedLoader,
+} from './pages/OrderRecieved';
+import LoginPage from './pages/Login';
 import AppLayout from './ui/AppLayout';
 import Error from './ui/Error';
+import PageNotFound from './pages/PageNotFound';
 import {
   TERMS_OF_USE_PAGE,
   LOREM_CONTENT,
   COURSES_PAGE,
   BLOG_PAGE,
   HOME_PAGE,
-  COURSE_PAGE,
-  ORDER_PAGE,
+  ORDER_RECIEVED_PAGE,
+  // ORDER_PAGE,
   CART_ADDRESS,
   NEW_ORDER,
+  CHECKOUT_PAGE,
+  LOGIN_PAGE,
 } from './utils/constants';
 
 const router = createBrowserRouter([
@@ -30,9 +37,26 @@ const router = createBrowserRouter([
       {
         path: HOME_PAGE,
         element: <Home />,
+        errorElement: <Error />,
       },
       {
-        path: `${COURSES_PAGE}/:courseTitle`,
+        path: '/order-received/:orderId',
+        element: <OrderRecievedPage />,
+        errorElement: <Error />,
+        loader: orderRecievedLoader,
+      },
+      {
+        path: CHECKOUT_PAGE,
+        element: <CheckoutPage />,
+        errorElement: <Error />,
+        action: checkoutAction,
+      },
+      {
+        path: LOGIN_PAGE,
+        element: <LoginPage />,
+      },
+      {
+        path: `${COURSES_PAGE}/:courseId`,
         element: <Course />,
         loader: courseLoader,
         errorElement: <Error />,
@@ -40,18 +64,13 @@ const router = createBrowserRouter([
       {
         path: COURSES_PAGE,
         element: <Courses />,
-        loader: courseLoader,
-        errorElement: <Error />,
-      },
-      {
-        path: `/order/:orderId`,
-        element: <Order />,
-        loader: orderLoader,
+        loader: coursesLoader,
         errorElement: <Error />,
       },
       {
         path: CART_ADDRESS,
         element: <Cart />,
+        errorElement: <Error />,
       },
       {
         path: NEW_ORDER,
@@ -68,6 +87,10 @@ const router = createBrowserRouter([
       {
         path: TERMS_OF_USE_PAGE,
         element: <StaticPages title="Terms of Use" content={LOREM_CONTENT} />,
+      },
+      {
+        path: '*',
+        element: <PageNotFound />,
       },
     ],
   },

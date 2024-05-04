@@ -18,11 +18,11 @@ function LatestCourses({ count }) {
     [setCourses],
   );
   return (
-    <div className="flex flex-col justify-center gap-4 px-5 md:flex-row">
+    <ul className="mx-5 flex flex-col justify-center gap-4 md:flex-row">
       {courses?.map((item) => (
         <CourseItem key={item.id} item={item} />
       ))}
-    </div>
+    </ul>
   );
 }
 

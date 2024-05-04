@@ -1,14 +1,19 @@
 import { API_URL } from '../utils/constants';
 
-export async function getOrder(orderId) {
-  const res = await fetch(`${API_URL}orders/${orderId}`);
-  if (!res.ok) throw new Error('couldnt find order');
-  const data = await res.json();
-  return data;
+export async function getOrderById(orderId) {
+  try {
+    const res = await fetch(`${API_URL}orders?id=${orderId}`);
+    if (!res.ok) throw new Error('couldnt find order');
+    const data = await res.json();
+    return data?.[0] || null;
+  } catch {
+    throw Error('Failed to create your order');
+  }
 }
 
 export async function createOrder(newOrder) {
   try {
+    newOrder['totalPrice'] = 800000;
     const res = await fetch(`${API_URL}orders`, {
       method: 'POST',
       body: JSON.stringify(newOrder),

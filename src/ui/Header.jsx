@@ -18,14 +18,14 @@ function Header() {
     <header className="shadow">
       <nav className="mx-auto max-w-screen-lg border-gray-200 bg-white px-4 py-4 shadow-md md:shadow-none lg:px-6 dark:bg-gray-800">
         <div className="mx-auto flex  flex-wrap items-center justify-between">
-          <a href="https://flowbite.com" className="flex flex-col ">
+          <Link to={HOME_PAGE} className="flex flex-col ">
             <span className="sm:text-md text-base font-semibold uppercase tracking-[2px] sm:tracking-[5px]">
               Masterino Co.
             </span>
             <p className="sm:text-md text-sm sm:tracking-[2px]">
               Learn Professionally
             </p>
-          </a>
+          </Link>
           <div
             className="sahar hidden items-center justify-between
              bg-white px-2 pb-4 sm:block
@@ -98,6 +98,7 @@ function Header() {
                 <li
                   className="bg-primary-700 lg:text-primary-700 block rounded py-2 pl-3 pr-4 text-slate-600 lg:bg-transparent lg:p-0 dark:text-white"
                   key={item.title}
+                  onClick={() => setShowMobileMenu(false)}
                 >
                   <Link to={item.to}>{item.title}</Link>
                 </li>
