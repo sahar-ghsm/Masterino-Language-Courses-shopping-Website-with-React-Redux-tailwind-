@@ -2,28 +2,30 @@ import { Link } from 'react-router-dom';
 import CartTable from '../features/cart/CartTable';
 import { useState } from 'react';
 import { CHECKOUT_PAGE } from '../utils/constants';
-import { initialCart } from '../utils/constants';
+import {
+  deleteItem,
+  getShoppingCart,
+  getTotalPriceOfCart,
+} from '../features/cart/cartSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import EmptyCart from '../features/cart/EmptyCart';
 
 function Cart() {
-  const [cart, setCart] = useState(initialCart);
   const [discount, setDiscount] = useState('');
-  const totalPrice =
-    cart.reduce(
-      (accumulator, currentValue) =>
-        accumulator + currentValue.price * currentValue.quantity,
-      0,
-    ) + discount || 0;
+  const totalPrice = useSelector(getTotalPriceOfCart) + discount || 0;
+  const dispatch = useDispatch();
+  const shoppingCart = useSelector(getShoppingCart);
 
   function deleteCartItem(itemId) {
-    const updatedCart = cart.filter((item) => item.id != itemId);
-    setCart(updatedCart);
+    dispatch(deleteItem(itemId));
   }
+  if (!shoppingCart?.length) return <EmptyCart />;
 
   function applyDiscountCode() {}
   return (
-    <div className="mx-5 max-w-screen-lg md:mt-10 md:flex">
+    <div className="m-5 max-w-screen-lg md:mt-10 md:flex xl:mx-auto  xl:px-5">
       <div className="mb-5 flex justify-between gap-4 md:w-3/4">
-        <CartTable cart={cart} deleteCartItem={deleteCartItem} />
+        <CartTable deleteCartItem={deleteCartItem} />
       </div>
       <div className="rounded-md bg-slate-300 p-5 shadow-md md:mx-auto md:h-[200px] md:w-1/4">
         <div className="  flex items-center justify-between gap-3">

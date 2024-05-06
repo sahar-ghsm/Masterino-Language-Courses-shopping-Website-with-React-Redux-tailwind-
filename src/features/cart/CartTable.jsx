@@ -1,8 +1,17 @@
 import { RiDeleteBin6Line } from 'react-icons/ri';
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteItem, getShoppingCart } from './cartSlice';
 
-function CartTable({ cart, deleteCartItem }) {
+function CartTable() {
+  const shoppingCart = useSelector(getShoppingCart);
+  const dispatch = useDispatch();
+
+  function deleteCartItem(itemId) {
+    dispatch(deleteItem(itemId));
+  }
+
   return (
-    <div className="md:mx-auto ">
+    <div className="md:mx-5 ">
       <table>
         <thead className="text-xs md:text-base">
           <tr className="w-full border-b-2">
@@ -15,9 +24,9 @@ function CartTable({ cart, deleteCartItem }) {
           </tr>
         </thead>
         <tbody className=" gap-4">
-          {cart.map((item) => (
+          {shoppingCart.map((item, index) => (
             <tr
-              key={item.id}
+              key={index}
               className="mb-2 border-b-2 pt-2 text-center text-xs md:text-base"
             >
               <td className="my-2 mr-2 inline-block">

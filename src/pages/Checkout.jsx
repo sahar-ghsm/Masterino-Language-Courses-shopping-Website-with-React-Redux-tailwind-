@@ -6,16 +6,26 @@ import {
   useNavigation,
 } from 'react-router-dom';
 import { HOME_PAGE, LOGIN_PAGE, ORDER_RECIEVED_PAGE } from '../utils/constants';
-import { initialCart } from '../utils/constants';
 import { createOrder } from '../services/apiOrders';
+import { useSelector } from 'react-redux';
+import {
+  getTotalPriceOfCart,
+  getShoppingCart,
+  clearCart,
+} from '../features/cart/cartSlice';
+import store from '../utils/store';
 
 function CheckoutPage() {
   const navigation = useNavigation();
   const isSubmitting = navigation.state === 'submitting';
   const formErrors = useActionData();
+  const username = useSelector((store) => store.user.username);
+  const shoppingCart = useSelector(getShoppingCart);
+
+  const orderTotalPrice = useSelector(getTotalPriceOfCart);
   function setPaymentMethod() {}
   return (
-    <div className="m-5 mx-auto max-w-screen-lg">
+    <div className="m-5 max-w-screen-lg lg:mx-auto">
       <div className="mb-5 rounded-md bg-lime-100 px-5 py-4 text-base">
         Already registered? Click{' '}
         <Link to={LOGIN_PAGE}>
@@ -36,6 +46,7 @@ function CheckoutPage() {
             <label className="text-sm font-semibold">First Name</label>
             <input
               name="customerFirstName"
+              defaultValue={username}
               className="mt-2 w-full rounded-md border-2 p-2"
             />
           </div>
@@ -63,10 +74,10 @@ function CheckoutPage() {
           <input
             type="hidden"
             name="cart"
-            value={JSON.stringify(initialCart)}
+            value={JSON.stringify(shoppingCart)}
           />
           <div className="mb-5 rounded-md border-2 pt-3 text-sm">
-            {initialCart.map((item) => (
+            {shoppingCart.map((item) => (
               <div className="flex justify-between px-5 py-2" key={item.id}>
                 <span>{item.title}</span>
                 <span>
@@ -78,7 +89,8 @@ function CheckoutPage() {
             <div className="mt-2 flex justify-between bg-lime-50 px-5 py-3 font-semibold">
               <span>Total</span>
               <span>
-                80000000<span className="ml-1 text-xs">$</span>
+                {orderTotalPrice}
+                <span className="ml-1 text-xs">$</span>
               </span>
             </div>
           </div>
@@ -127,6 +139,7 @@ export async function action({ request }) {
 
   if (errors?.length > 0) return errors;
   const order = await createOrder(data);
+  store.dispatch(clearCart());
   return redirect(ORDER_RECIEVED_PAGE(order.id));
 }
 
