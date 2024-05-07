@@ -10,6 +10,7 @@ import CheckoutPage, { action as checkoutAction } from './pages/Checkout';
 import OrderRecievedPage, {
   loader as orderRecievedLoader,
 } from './pages/OrderRecieved';
+import { action as updateOrderAction } from './pages/OrderRecieved';
 import LoginPage from './pages/Login';
 import AppLayout from './ui/AppLayout';
 import Error from './ui/Error';
@@ -44,6 +45,7 @@ const router = createBrowserRouter([
         element: <OrderRecievedPage />,
         errorElement: <Error />,
         loader: orderRecievedLoader,
+        action: updateOrderAction,
       },
       {
         path: CHECKOUT_PAGE,

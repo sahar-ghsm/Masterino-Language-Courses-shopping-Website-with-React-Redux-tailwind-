@@ -489,6 +489,18 @@
       "cart": "[{\"title\":\"Intelligent Bronze Car\",\"image\":\"https://loremflickr.com/640/480/business?lock=1678685432184832\",\"id\":\"0b3741db-f109-48a1-94dd-c6656f8c515e\",\"price\":\"1382\",\"quantity\":3},{\"title\":\"Fantastic Metal Chips\",\"image\":\"https://loremflickr.com/640/480/business?lock=3332567696670720\",\"id\":\"f8039d15-b48d-4a89-a4a1-2539b3c5ee6e\",\"price\":\"257\",\"quantity\":1},{\"title\":\"Tasty Fresh Cheese\",\"image\":\"https://loremflickr.com/640/480/business?lock=8314901598568448\",\"id\":\"1b708991-71c0-47df-a868-d733190da0a0\",\"price\":\"879\",\"quantity\":5}]",
       "paymentMethod": "on Delivery",
       "totalPrice": 800000
+    },
+    {
+      "id": "5bb7",
+      "customerFirstName": "Sahar",
+      "customerLastName": "Ghasemi",
+      "customerPhone": "7788714303",
+      "customerEmail": "s.ghasemee@gmail.com",
+      "address": "1629 St Georges Ave North Vancouver",
+      "cart": "[{\"title\":\"Elegant Metal Shoes\",\"image\":\"https://loremflickr.com/640/480/business?lock=7360522770972672\",\"id\":\"de83df0f-eccc-4b8a-8852-326fc88f7a8a\",\"price\":\"402\",\"quantity\":1}]",
+      "paymentMethod": "on Delivery",
+      "totalPrice": 400000,
+      "discount": "100000"
     }
   ],
   "reviews": [

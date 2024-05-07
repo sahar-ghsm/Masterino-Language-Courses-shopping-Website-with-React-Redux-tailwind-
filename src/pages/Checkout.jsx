@@ -7,22 +7,27 @@ import {
 } from 'react-router-dom';
 import { HOME_PAGE, LOGIN_PAGE, ORDER_RECIEVED_PAGE } from '../utils/constants';
 import { createOrder } from '../services/apiOrders';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   getTotalPriceOfCart,
   getShoppingCart,
   clearCart,
 } from '../features/cart/cartSlice';
 import store from '../utils/store';
+import { fetchAddress } from '../features/user/userSlice';
 
 function CheckoutPage() {
   const navigation = useNavigation();
   const isSubmitting = navigation.state === 'submitting';
   const formErrors = useActionData();
-  const username = useSelector((store) => store.user.username);
+  const { username, position, address, error, status } = useSelector(
+    (store) => store.user,
+  );
   const shoppingCart = useSelector(getShoppingCart);
-
   const orderTotalPrice = useSelector(getTotalPriceOfCart);
+  const dispatch = useDispatch();
+  const isLoadingAddress = status === 'loading';
+
   function setPaymentMethod() {}
   return (
     <div className="m-5 max-w-screen-lg lg:mx-auto">
@@ -70,6 +75,39 @@ function CheckoutPage() {
               name="customerEmail"
               className="mt-2 w-full rounded-md border-2 p-2"
             />
+          </div>
+          <div className="relative mb-5">
+            <label className="text-sm font-semibold">Address</label>
+            <div className="grow">
+              <input
+                className="mt-2 w-full rounded-md border-2 p-2"
+                type="text"
+                name="address"
+                disabled={isLoadingAddress}
+                defaultValue={address}
+                required
+              />
+              {status === 'error' && (
+                <p className="mt-2 rounded-md bg-red-100 p-2 text-xs text-red-700">
+                  {error}
+                </p>
+              )}
+            </div>
+
+            {!position.latitude && !position.longitude && (
+              <span className="absolute bottom-[4px] right-[3px] z-50">
+                <button
+                  disabled={isLoadingAddress}
+                  className="rounded-md border-2 px-2 py-1 font-semibold text-green-600"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    dispatch(fetchAddress());
+                  }}
+                >
+                  Get position
+                </button>
+              </span>
+            )}
           </div>
           <input
             type="hidden"

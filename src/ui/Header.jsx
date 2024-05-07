@@ -28,7 +28,7 @@ function Header() {
           </Link>
           <div
             className="sahar hidden items-center justify-between
-             bg-white px-2 pb-4 sm:block
+             bg-white px-2 pb-4 md:block
              lg:order-1 lg:flex lg:w-auto"
             id="mobilemenu"
           >
