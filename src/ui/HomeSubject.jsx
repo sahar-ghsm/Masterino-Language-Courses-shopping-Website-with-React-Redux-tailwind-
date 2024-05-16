@@ -38,8 +38,6 @@ function HomeSubject() {
             <PiStudentLight className="text-2xl" />
           </Link>
         </div>
-
-        <div id="customer_reviews"></div>
       </div>
     </div>
   );

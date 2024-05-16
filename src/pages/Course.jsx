@@ -32,7 +32,7 @@ function Course() {
           </div>
           <h3 className="mb-3 mt-8 text-base font-semibold">Chapters</h3>
           <div>
-            {course.chapters.map((chapter) => (
+            {course?.chapters?.map((chapter) => (
               <ChapterItem key={chapter.title} item={chapter} />
             ))}
           </div>

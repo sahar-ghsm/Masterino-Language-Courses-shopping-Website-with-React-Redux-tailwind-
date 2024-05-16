@@ -34,7 +34,10 @@ function Home() {
       <section className="py-5">
         <HomeAdvertisement />
       </section>
-      <section className="w-100 my-10 bg-amber-50 py-5 pb-10 md:pt-10">
+      <section
+        id="customer_reviews"
+        className="w-100 my-10 bg-amber-50 py-5 pb-10 md:pt-10"
+      >
         <div className="mx-auto flex max-w-screen-lg flex-col items-center ">
           <h2 className="text-md font-semibold md:pb-7 md:text-3xl">
             Masterino Customers Reviews
