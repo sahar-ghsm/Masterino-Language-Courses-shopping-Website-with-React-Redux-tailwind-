@@ -3,10 +3,9 @@ import { API_URL } from '../utils/constants';
 export async function getCourses() {
   try {
     const res = await fetch(`${API_URL}courses`);
-
     if (!res.ok) throw new Error('Failed to get courses, please try again...');
     const data = await res.json();
-    return data;
+    return data?.courses;
   } catch {
     throw Error('Failed to get courses, please try again...');
   }

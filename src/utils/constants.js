@@ -1,4 +1,4 @@
-export const API_URL = '/.netlify/functions/data-mock';
+export const API_URL = '/.netlify/functions/data-mock/';
 
 export const COURSES_PAGE = '/courses';
 export const BLOG_PAGE = '/blog';

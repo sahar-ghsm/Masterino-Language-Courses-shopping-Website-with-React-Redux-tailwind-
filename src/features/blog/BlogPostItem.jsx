@@ -3,10 +3,11 @@ import { FaRegComment } from 'react-icons/fa';
 
 function BlogPostItem({ item }) {
   return (
-    <div className="rounded-lg border border-gray-200 bg-white shadow md:h-[550px] md:w-0 md:flex-1 dark:border-gray-700 dark:bg-gray-800 ">
-      <Link to={`blog-posts/${item.title.replace(' ', '-')}`}>
-        <img className="h-2/5 w-full rounded-t-lg" src={item.image} />
-      </Link>
+    <Link
+      to={`blog-posts/${item.title.replace(' ', '-')}`}
+      className="flex-1 rounded-lg border border-gray-200 bg-white shadow md:h-[550px] dark:border-gray-700 dark:bg-gray-800 "
+    >
+      <img className="h-2/5 w-full rounded-t-lg" src={item.image} />
       <div className="flex h-3/5 flex-col justify-between px-4 py-5">
         <div>
           <h3 className="text-center text-base font-semibold md:py-4 md:text-xl">
@@ -30,7 +31,7 @@ function BlogPostItem({ item }) {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

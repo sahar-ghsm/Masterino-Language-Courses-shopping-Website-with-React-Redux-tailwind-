@@ -6,7 +6,7 @@ export async function getReviews() {
     if (!res.ok) throw Error('couldnt fetch customer reviews, please refresh.');
 
     const data = await res.json();
-    return data;
+    return data?.reviews;
   } catch {
     throw Error('couldnt fetch customer reviews, please refresh.');
   }
@@ -22,7 +22,7 @@ export async function createReview(newReview) {
   });
 
   const data = await res.json();
-  return data;
+  return data?.reviews;
 }
 
 export async function getAddress({ latitude, longitude }) {

@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import BlogPostItem from './BlogPostItem';
-import { getPosts } from '../../services/apiBlogPosts';
+import { getBlogPosts } from '../../services/apiBlogPosts';
 
 function LatestCourses({ count }) {
   const [posts, setPosts] = useState(null);
   useEffect(
     function () {
       async function fetchPosts() {
-        const res = await getPosts();
+        const res = await getBlogPosts();
         const postCount = count || res.length;
         setPosts(res.slice(Math.max(res.length - postCount, 0)));
       }
