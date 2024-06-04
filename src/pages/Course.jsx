@@ -6,10 +6,10 @@ import Reviews from '../features/user/Reviews';
 import NewReview from '../features/user/NewReview';
 import { createReview } from '../services/apiUsers';
 import AddToCart from '../features/cart/AddToCart';
+import List from '../ui/List';
 
 function Course() {
   const course = useLoaderData();
-
   async function submitNewReview(newReview) {
     const review = {
       ...newReview,
@@ -32,9 +32,12 @@ function Course() {
           </div>
           <h3 className="mb-3 mt-8 text-base font-semibold">Chapters</h3>
           <div>
-            {course?.chapters?.map((chapter) => (
-              <ChapterItem key={chapter.title} item={chapter} />
-            ))}
+            <List
+              items={course?.chapters || []}
+              render={(chapter) => (
+                <ChapterItem key={chapter.title} item={chapter} />
+              )}
+            />
           </div>
           <TutorBio tutor={course.tutor} />
           <Reviews reviews={course.reviews} title={course.title} />

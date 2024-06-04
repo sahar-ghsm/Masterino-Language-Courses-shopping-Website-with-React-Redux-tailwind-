@@ -1,11 +1,12 @@
 import { API_URL } from '../utils/constants';
+import { supabase } from './supabase';
 
 export async function getCourses() {
   try {
-    const res = await fetch(`${API_URL}courses`);
-    if (!res.ok) throw new Error('Failed to get courses, please try again...');
-    const data = await res.json();
-    return data?.courses;
+    let { data: courses, error } = await supabase.from('Courses').select('*');
+    if (error) throw new Error('Failed to get courses, please try again...');
+
+    return courses;
   } catch {
     throw Error('Failed to get courses, please try again...');
   }

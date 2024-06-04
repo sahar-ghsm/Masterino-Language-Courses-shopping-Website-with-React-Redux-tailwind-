@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.3",
+    "@supabase/supabase-js": "^2.43.4",
     "concurrently": "^8.2.2",
     "json-server": "^1.0.0-alpha.23",
     "react": "^18.2.0",
