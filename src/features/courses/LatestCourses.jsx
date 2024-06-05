@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import CourseItem from './CourseItem';
 import { getCourses } from '../../services/apiCourses';
+import List from '../../ui/List';
 
 function LatestCourses({ count }) {
   const [courses, setCourses] = useState(null);
@@ -18,11 +19,10 @@ function LatestCourses({ count }) {
     [setCourses],
   );
   return (
-    <ul className="mx-5 flex flex-col justify-center gap-4 md:flex-row">
-      {courses?.map((item) => (
-        <CourseItem key={item.id} item={item} />
-      ))}
-    </ul>
+    <List
+      items={courses}
+      render={(item) => <CourseItem key={item.id} item={item} />}
+    />
   );
 }
 

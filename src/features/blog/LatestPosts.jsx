@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import BlogPostItem from './BlogPostItem';
 import { getBlogPosts } from '../../services/apiBlogPosts';
+import List from '../../ui/List';
 
 function LatestCourses({ count }) {
   const [posts, setPosts] = useState(null);
@@ -18,11 +19,10 @@ function LatestCourses({ count }) {
   );
 
   return (
-    <div className="flex flex-col justify-center gap-5 px-5 md:flex-row md:px-3">
-      {posts?.map((item) => (
-        <BlogPostItem key={item.id} item={item} />
-      ))}
-    </div>
+    <List
+      items={posts}
+      render={(item) => <BlogPostItem key={item.id} item={item} />}
+    />
   );
 }
 

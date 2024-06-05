@@ -16,12 +16,13 @@ export async function getRecentCourses({ count }) {}
 
 export async function getCourseById(courseId) {
   try {
-    console.log('fetch');
-    const res = await fetch(`${API_URL}courses/${courseId}`);
+    let { data: courses, error } = await supabase
+      .from('Courses')
+      .select('*')
+      .eq('id', courseId);
 
-    if (!res.ok) throw Error('Failed to fetch course, please try again');
-    const data = await res.json();
-    return data;
+    if (error) throw Error('Failed to fetch course, please try again');
+    return courses;
   } catch (error) {
     throw Error(error.message);
   }
