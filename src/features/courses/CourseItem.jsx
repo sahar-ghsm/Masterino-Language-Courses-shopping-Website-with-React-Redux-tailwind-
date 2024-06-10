@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import Rating from '../../ui/Rating';
-import { COURSE_PAGE } from '../../utils/constants';
+import Rating from '@/ui/Rating';
+import { COURSE_PAGE } from '@/utils/constants';
 
 function CourseItem({ item }) {
   return (

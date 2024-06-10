@@ -1,13 +1,13 @@
 import { LiaComments } from 'react-icons/lia';
 import { PiStudentLight } from 'react-icons/pi';
 import { Link } from 'react-router-dom';
-import { COURSES_PAGE } from '../utils/constants';
+import { COURSES_PAGE } from '@/utils/constants';
 
 function HomeSubject() {
   return (
     <div className=" mx-auto mt-5  flex max-w-screen-lg flex-col gap-5 md:flex-row">
       <div className="flex w-full justify-around md:w-1/2  ">
-        <img className="h-[22rem] w-[22rem] " src="../../img/c1.png" />
+        <img className="h-[22rem] w-[22rem] " src="/img/c1.png" />
       </div>
       <div className="flex w-full flex-col items-center justify-center px-4 md:w-1/2">
         <div className="md:text-md flex flex-col items-center justify-center text-sm md:items-start">

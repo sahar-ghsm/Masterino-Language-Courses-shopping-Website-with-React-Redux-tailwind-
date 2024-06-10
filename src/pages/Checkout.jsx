@@ -5,16 +5,16 @@ import {
   useActionData,
   useNavigation,
 } from 'react-router-dom';
-import { HOME_PAGE, LOGIN_PAGE, ORDER_RECIEVED_PAGE } from '../utils/constants';
-import { createOrder } from '../services/apiOrders';
+import { HOME_PAGE, LOGIN_PAGE, ORDER_RECIEVED_PAGE } from '@/utils/constants';
+import { createOrder } from '@/services/apiOrders';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   getTotalPriceOfCart,
   getShoppingCart,
   clearCart,
-} from '../features/cart/cartSlice';
-import store from '../utils/store';
-import { fetchAddress } from '../features/user/userSlice';
+} from '@/features/cart/cartSlice';
+import store from '@/utils/store';
+import { fetchAddress } from '@/features/user/userSlice';
 
 function CheckoutPage() {
   const navigation = useNavigation();

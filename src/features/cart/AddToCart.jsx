@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { CART_ADDRESS } from '../../utils/constants';
+import { CART_ADDRESS } from '@/utils/constants';
 import {
   addItem,
   descreaseItemQuantity,

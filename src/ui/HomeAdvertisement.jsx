@@ -33,7 +33,7 @@ function HomeAdvertisement() {
         </div>
       </div>
       <img
-        src="../../img/c2.webp"
+        src="/img/c2.webp"
         alt="masterino"
         className=" mx-5 rounded-md shadow-md shadow-yellow-500/50 md:mx-0 md:shadow-2xl"
       />

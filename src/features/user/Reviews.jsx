@@ -1,5 +1,5 @@
-import { dateStringFormat } from '../../utils/helpers';
-import Rating from '../../ui/Rating';
+import { dateStringFormat } from '@/utils/helpers';
+import Rating from '@/ui/Rating';
 
 function Reviews({ reviews, title }) {
   console.log(reviews[0].createDate);

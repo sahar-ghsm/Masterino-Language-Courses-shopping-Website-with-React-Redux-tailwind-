@@ -1,5 +1,5 @@
 import { Form } from 'react-router-dom';
-import Rating from '../../ui/Rating';
+import Rating from '@/ui/Rating';
 import { useState } from 'react';
 function NewReview({ submitNewReview }) {
   const [name, setName] = useState('');

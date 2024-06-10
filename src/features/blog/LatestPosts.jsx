@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import BlogPostItem from './BlogPostItem';
-import { getBlogPosts } from '../../services/apiBlogPosts';
-import List from '../../ui/List';
+import { getBlogPosts } from '@/services/apiBlogPosts';
+import List from '@/ui/List';
 
 function LatestCourses({ count }) {
   const [posts, setPosts] = useState(null);

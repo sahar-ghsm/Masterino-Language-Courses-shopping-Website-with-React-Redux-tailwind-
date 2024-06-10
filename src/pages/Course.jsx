@@ -1,12 +1,12 @@
 import { useLoaderData } from 'react-router-dom';
-import { getCourseById } from '../services/apiCourses';
-import ChapterItem from '../features/courses/ChapterItem';
-import TutorBio from '../features/courses/TutorBio';
-import Reviews from '../features/user/Reviews';
-import NewReview from '../features/user/NewReview';
-import { createReview } from '../services/apiUsers';
-import AddToCart from '../features/cart/AddToCart';
-import List from '../ui/List';
+import { getCourseById } from '@/services/apiCourses';
+import ChapterItem from '@/features/courses/ChapterItem';
+import TutorBio from '@/features/courses/TutorBio';
+import Reviews from '@/features/user/Reviews';
+import NewReview from '@/features/user/NewReview';
+import { createReview } from '@/services/apiUsers';
+import AddToCart from '@/features/cart/AddToCart';
+import List from '@/ui/List';
 
 function Course() {
   const course = useLoaderData();

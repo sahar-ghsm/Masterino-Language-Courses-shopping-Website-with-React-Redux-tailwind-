@@ -1,7 +1,7 @@
 import { useLoaderData } from 'react-router-dom';
-import { getCourses } from '../services/apiCourses';
-import CourseItem from '../features/courses/CourseItem';
-import List from '../ui/List';
+import { getCourses } from '@/services/apiCourses';
+import CourseItem from '@/features/courses/CourseItem';
+import List from '@/ui/List';
 
 function Courses() {
   const courses = useLoaderData();

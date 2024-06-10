@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import SearchOrder from '../features/order/SearchOrder';
-import Username from '../features/user/Username';
-import Profile from '../features/user/Profile';
-import { HOME_PAGE } from '../utils/constants';
+import SearchOrder from '@/features/order/SearchOrder';
+import Username from '@/features/user/Username';
+import Profile from '@/features/user/Profile';
+import { HOME_PAGE } from '@/utils/constants';
 import { useState } from 'react';
 
 function Header() {

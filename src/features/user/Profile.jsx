@@ -2,7 +2,7 @@ import { VscAccount } from 'react-icons/vsc';
 import { PiShoppingCartLight } from 'react-icons/pi';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { CART_ADDRESS } from '../../utils/constants';
+import { CART_ADDRESS } from '@/utils/constants';
 import { getTotalQuantityOfCart } from '../cart/cartSlice';
 
 function Profile() {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import CourseItem from './CourseItem';
-import { getCourses } from '../../services/apiCourses';
-import List from '../../ui/List';
+import { getCourses } from '@/services/apiCourses';
+import List from '@/ui/List';
 
 function LatestCourses({ count }) {
   const [courses, setCourses] = useState(null);

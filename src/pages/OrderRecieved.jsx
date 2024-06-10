@@ -1,7 +1,7 @@
 import { Link, useFetcher, useLoaderData } from 'react-router-dom';
-import { getOrderById, updateOrder } from '../services/apiOrders';
-import { dateStringFormat } from '../utils/helpers';
-import { HOME_PAGE } from '../utils/constants';
+import { getOrderById, updateOrder } from '@/services/apiOrders';
+import { dateStringFormat } from '@/utils/helpers';
+import { HOME_PAGE } from '@/utils/constants';
 
 function OrderRecieved() {
   const order = useLoaderData();

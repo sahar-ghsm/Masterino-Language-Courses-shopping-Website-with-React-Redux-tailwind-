@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { getReviews } from '../services/apiUsers';
-import ReviewItem from '../features/user/ReviewItem';
+import { getReviews } from '@/services/apiUsers';
+import ReviewItem from '@/features/user/ReviewItem';
 
 function HomeCustomerReviews() {
   const [reviews, setReviews] = useState([]);

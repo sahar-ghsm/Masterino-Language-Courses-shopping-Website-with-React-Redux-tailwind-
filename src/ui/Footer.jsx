@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { TERMS_OF_USE_PAGE } from '../utils/constants';
+import { TERMS_OF_USE_PAGE } from '@/utils/constants';
 
 function Footer() {
   return (

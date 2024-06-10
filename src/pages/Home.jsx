@@ -1,12 +1,12 @@
-import HomeSubject from '../ui/HomeSubject';
-import LatestCourses from '../features/courses/LatestCourses';
-import HomeAdvertisement from '../ui/HomeAdvertisement';
-import HomeCustomerReviews from '../ui/HomeCustomerReviews';
+import HomeSubject from '@/ui/HomeSubject';
+import LatestCourses from '@/features/courses/LatestCourses';
+import HomeAdvertisement from '@/ui/HomeAdvertisement';
+import HomeCustomerReviews from '@/ui/HomeCustomerReviews';
 import { Link } from 'react-router-dom';
 import { FaChevronRight } from 'react-icons/fa';
-import { BLOG_PAGE } from '../utils/constants';
-import LatestPosts from '../features/blog/LatestPosts';
-import Footer from '../ui/Footer';
+import { BLOG_PAGE } from '@/utils/constants';
+import LatestPosts from '@/features/blog/LatestPosts';
+import Footer from '@/ui/Footer';
 
 function Home() {
   return (

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleteItem, getShoppingCart } from './cartSlice';
 import { useFetcher } from 'react-router-dom';
 import { useEffect } from 'react';
-import { COURSES_PAGE } from '../../utils/constants';
+import { COURSES_PAGE } from '@/utils/constants';
 
 function CartTable() {
   const shoppingCart = useSelector(getShoppingCart);

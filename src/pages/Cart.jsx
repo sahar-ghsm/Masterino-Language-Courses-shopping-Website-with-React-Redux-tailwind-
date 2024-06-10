@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
-import CartTable from '../features/cart/CartTable';
+import CartTable from '@/features/cart/CartTable';
 import { useState } from 'react';
-import { CHECKOUT_PAGE } from '../utils/constants';
+import { CHECKOUT_PAGE } from '@/utils/constants';
 import {
   deleteItem,
   getShoppingCart,
   getTotalPriceOfCart,
-} from '../features/cart/cartSlice';
+} from '@/features/cart/cartSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import EmptyCart from '../features/cart/EmptyCart';
+import EmptyCart from '@/features/cart/EmptyCart';
 
 function Cart() {
   const [discount, setDiscount] = useState('');
