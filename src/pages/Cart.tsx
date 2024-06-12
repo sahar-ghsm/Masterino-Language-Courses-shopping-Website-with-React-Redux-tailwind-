@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import CartTable from '@/features/cart/CartTable';
+import CartTable from '@/features/cart/CartTable.tsx';
 import { useState } from 'react';
 import { CHECKOUT_PAGE } from '@/utils/constants';
 import {
@@ -23,12 +23,12 @@ function Cart() {
 
   function applyDiscountCode() {}
   return (
-    <div className="m-5 max-w-screen-lg md:mt-10 md:flex xl:mx-auto  xl:px-5">
+    <div className="m-5 max-w-screen-lg md:mt-10 md:flex xl:mx-auto xl:px-5">
       <div className="mb-5 flex justify-between gap-4 md:w-3/4">
         <CartTable deleteCartItem={deleteCartItem} />
       </div>
       <div className="rounded-md bg-slate-300 p-5 shadow-md md:mx-auto md:h-[200px] md:w-1/4">
-        <div className="  flex items-center justify-between gap-3">
+        <div className="flex items-center justify-between gap-3">
           <input
             placeholder="discount code"
             value={discount}
@@ -45,7 +45,7 @@ function Cart() {
         </div>
         <div className="my-6 flex items-center justify-between text-slate-700">
           <span className="text-base font-semibold">Total:</span>
-          <span className="text-base font-semibold ">
+          <span className="text-base font-semibold">
             {totalPrice}
             <span className="text-m ml-1">$</span>
           </span>

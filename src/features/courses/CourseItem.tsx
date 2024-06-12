@@ -6,7 +6,7 @@ function CourseItem({ item }) {
   return (
     <Link
       to={COURSE_PAGE(item.id)}
-      className="flex-1 rounded-lg border border-gray-200 bg-white shadow md:h-[550px] dark:border-gray-700 dark:bg-gray-800 "
+      className="flex-1 rounded-lg border border-gray-200 bg-white shadow md:h-[550px] dark:border-gray-700 dark:bg-gray-800"
     >
       <img className="h-2/5 w-full rounded-t-lg" src={item.image} />
       <div className="flex h-3/5 flex-col justify-between px-4 py-1 md:pb-5 md:pt-5">
@@ -25,7 +25,7 @@ function CourseItem({ item }) {
             </span>
             <Rating value={item.rating} />
           </div>
-          <div className="my-2 flex items-center justify-between md:pl-4 md:pr-3">
+          <div className="my-2 flex items-center justify-between">
             <span>
               <span className="text-base font-semibold text-red-500 md:text-xl">
                 {item.price}

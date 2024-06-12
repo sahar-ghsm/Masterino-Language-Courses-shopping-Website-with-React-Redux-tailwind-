@@ -2,7 +2,6 @@ import { dateStringFormat } from '@/utils/helpers';
 import Rating from '@/ui/Rating';
 
 function Reviews({ reviews, title }) {
-  console.log(reviews[0].createDate);
   if (!reviews?.length) return null;
   return (
     <div className="p-5 shadow-md">
@@ -18,7 +17,7 @@ function Reviews({ reviews, title }) {
             <div className="flex flex-col justify-center">
               <div className="mb-2 flex items-center justify-between">
                 <span className="text-xs">
-                  <span className=" font-semibold">
+                  <span className="font-semibold">
                     {`${review.user.firstName}`}
                   </span>
                   <span className="block">

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import SearchOrder from '@/features/order/SearchOrder';
-import Username from '@/features/user/Username';
-import Profile from '@/features/user/Profile';
+import SearchOrder from '@/features/order/SearchOrder.tsx';
+import Username from '@/features/user/Username.tsx';
+import Profile from '@/features/user/Profile.tsx';
 import { HOME_PAGE } from '@/utils/constants';
 import { useState } from 'react';
 
@@ -17,8 +17,8 @@ function Header() {
   return (
     <header className="shadow">
       <nav className="mx-auto max-w-screen-lg border-gray-200 bg-white px-4 py-4 shadow-md md:shadow-none lg:px-6 dark:bg-gray-800">
-        <div className="mx-auto flex  flex-wrap items-center justify-between">
-          <Link to={HOME_PAGE} className="flex flex-col ">
+        <div className="mx-auto flex flex-wrap items-center justify-between">
+          <Link to={HOME_PAGE} className="flex flex-col">
             <span className="sm:text-md text-base font-semibold uppercase tracking-[2px] sm:tracking-[5px]">
               Masterino Co.
             </span>
@@ -27,15 +27,10 @@ function Header() {
             </p>
           </Link>
           <div
-            className="sahar hidden items-center justify-between
-             bg-white px-2 pb-4 md:block
-             lg:order-1 lg:flex lg:w-auto"
+            className="sahar hidden items-center justify-between bg-white px-2 pb-4 md:block lg:order-1 lg:flex lg:w-auto"
             id="mobilemenu"
           >
-            <ul
-              className=" mt-4 flex text-base
-              font-medium lg:mt-0 lg:flex-row lg:space-x-8"
-            >
+            <ul className="mt-4 flex text-base font-medium lg:mt-0 lg:flex-row lg:space-x-8">
               {menu.map((item) => (
                 <li
                   className="bg-primary-700 lg:text-primary-700 block rounded py-2 pl-3 pr-4 text-slate-600 lg:bg-transparent lg:p-0 dark:text-white"
@@ -85,15 +80,10 @@ function Header() {
           </div>
 
           <div
-            className={`sima ${!showMobileMenu && 'hidden'} delay-2000 absolute inset-x-0 top-16
-            w-full items-center justify-between
-             bg-white px-2 pb-4 transition ease-in-out md:hidden`}
+            className={`sima ${!showMobileMenu && 'hidden'} delay-2000 absolute inset-x-0 top-16 w-full items-center justify-between bg-white px-2 pb-4 transition ease-in-out md:hidden`}
             id="mobilemenu"
           >
-            <ul
-              className=" md:text-md mt-4 flex flex-col
-             text-base font-semibold md:font-medium lg:mt-0 lg:flex-row lg:space-x-8"
-            >
+            <ul className="md:text-md mt-4 flex flex-col text-base font-semibold md:font-medium lg:mt-0 lg:flex-row lg:space-x-8">
               {menu.map((item) => (
                 <li
                   className="bg-primary-700 lg:text-primary-700 block rounded py-2 pl-3 pr-4 text-slate-600 lg:bg-transparent lg:p-0 dark:text-white"

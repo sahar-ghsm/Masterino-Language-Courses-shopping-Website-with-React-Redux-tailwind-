@@ -80,7 +80,7 @@ function NewReview({ submitNewReview }) {
         <div className="text-center">
           <button
             type="submit"
-            className="mt-5 rounded-md border bg-lime-500 px-3 py-2 text-sm text-slate-50 "
+            className="mt-5 rounded-md border bg-lime-500 px-3 py-2 text-sm text-slate-50"
           >
             Submit
           </button>

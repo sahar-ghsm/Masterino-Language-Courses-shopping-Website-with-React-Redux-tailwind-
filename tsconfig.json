@@ -1,7 +1,14 @@
 {
   "compilerOptions": {
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "paths": {
       "@/*": ["./src/*"]
-    }
-  }
+    },
+    "noImplicitAny": false
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+
+  "exclude": ["node_modules"]
 }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import CourseItem from './CourseItem';
+import CourseItem from './CourseItem.tsx';
 import { getCourses } from '@/services/apiCourses';
-import List from '@/ui/List';
+import List from '@/ui/List.tsx';
 
 function LatestCourses({ count }) {
   const [courses, setCourses] = useState(null);
@@ -21,7 +21,7 @@ function LatestCourses({ count }) {
   return (
     <List
       items={courses}
-      render={(item) => <CourseItem key={item.id} item={item} />}
+      render={(item: object) => <CourseItem key={item.id} item={item} />}
     />
   );
 }

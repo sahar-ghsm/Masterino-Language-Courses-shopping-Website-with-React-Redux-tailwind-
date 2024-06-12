@@ -1,12 +1,12 @@
 import { useLoaderData } from 'react-router-dom';
 import { getCourseById } from '@/services/apiCourses';
-import ChapterItem from '@/features/courses/ChapterItem';
-import TutorBio from '@/features/courses/TutorBio';
-import Reviews from '@/features/user/Reviews';
-import NewReview from '@/features/user/NewReview';
+import ChapterItem from '@/features/courses/ChapterItem.tsx';
+import TutorBio from '@/features/courses/TutorBio.tsx';
+import Reviews from '@/features/user/Reviews.tsx';
+import NewReview from '@/features/user/NewReview.tsx';
 import { createReview } from '@/services/apiUsers';
-import AddToCart from '@/features/cart/AddToCart';
-import List from '@/ui/List';
+import AddToCart from '@/features/cart/AddToCart.tsx';
+import List from '@/ui/List.tsx';
 
 function Course() {
   const course = useLoaderData();
@@ -18,7 +18,6 @@ function Course() {
       itemCategory: course.category,
     };
     const res = await createReview(review);
-    console.log('new', res);
   }
   return (
     <div>
@@ -48,11 +47,7 @@ function Course() {
         <div className="mt-10 hidden h-[150px] w-1/4 rounded-md bg-slate-100 shadow-xl md:block">
           <AddToCart course={course} />
         </div>
-        <div
-          className="fixed bottom-0 left-0 
-        right-0 z-10 flex h-[100px] w-full items-center
-         justify-between bg-white shadow-md md:hidden"
-        >
+        <div className="fixed bottom-0 left-0 right-0 z-10 flex h-[100px] w-full items-center justify-between bg-white shadow-md md:hidden">
           <AddToCart course={course} />
         </div>
       </div>

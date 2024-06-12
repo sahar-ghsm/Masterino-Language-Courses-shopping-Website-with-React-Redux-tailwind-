@@ -1,11 +1,10 @@
 import { useLoaderData } from 'react-router-dom';
-import BlogPostItem from '@/features/blog/BlogPostItem';
+import BlogPostItem from '@/features/blog/BlogPostItem.tsx';
 import { getBlogPosts } from '@/services/apiBlogPosts';
-import List from '@/ui/List';
+import List from '@/ui/List.tsx';
 
 function Blog() {
   const posts = useLoaderData();
-
   return (
     <List
       items={posts}

@@ -1,20 +1,22 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Home from './pages/Home';
-import Courses, { loader as coursesLoader } from './pages/Courses';
-import Course, { loader as courseLoader } from './pages/Course';
-import Cart from './pages/Cart';
-import CreateOrder, { action as careteOrderAction } from './pages/CreateOrder';
-import Blog, { loader as blogPostsLoader } from './pages/Blog';
-import StaticPages from './pages/StaticPages';
-import CheckoutPage, { action as checkoutAction } from './pages/Checkout';
+import Home from './pages/Home.tsx';
+import Courses, { loader as coursesLoader } from './pages/Courses.tsx';
+import Course, { loader as courseLoader } from './pages/Course.tsx';
+import Cart from './pages/Cart.tsx';
+import CreateOrder, {
+  action as careteOrderAction,
+} from './pages/CreateOrder.tsx';
+import Blog, { loader as blogPostsLoader } from './pages/Blog.tsx';
+import StaticPages from './pages/StaticPages.tsx';
+import CheckoutPage, { action as checkoutAction } from './pages/Checkout.tsx';
 import OrderRecievedPage, {
   loader as orderRecievedLoader,
-} from './pages/OrderRecieved';
-import { action as updateOrderAction } from './pages/OrderRecieved';
-import LoginPage from './pages/Login';
-import AppLayout from './ui/AppLayout';
-import Error from './ui/Error';
-import PageNotFound from './pages/PageNotFound';
+} from './pages/OrderRecieved.tsx';
+import { action as updateOrderAction } from './pages/OrderRecieved.tsx';
+import LoginPage from './pages/Login.tsx';
+import AppLayout from './ui/AppLayout.tsx';
+import Error from './ui/Error.tsx';
+import PageNotFound from './pages/PageNotFound.tsx';
 import {
   TERMS_OF_USE_PAGE,
   LOREM_CONTENT,
