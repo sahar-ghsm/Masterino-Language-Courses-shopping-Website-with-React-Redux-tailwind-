@@ -1,4 +1,4 @@
-import { dateStringFormat } from '@/utils/helpers';
+import { dateStringFormat } from '@/utils/helpers.ts';
 import Rating from '@/ui/Rating';
 
 function Reviews({ reviews, title }) {

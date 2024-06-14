@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { CART_ADDRESS } from '@/utils/constants';
+import { CART_ADDRESS } from '@/utils/constants.ts';
 import {
   addItem,
   descreaseItemQuantity,
@@ -31,9 +31,9 @@ function AddToCart({ course }) {
   }
   return (
     <div
-      className={`top-4 flex h-[100px] w-full flex-row items-center justify-between border-t-2 px-5 shadow-md  md:h-[150px] md:flex-col md:justify-center md:rounded-md md:border-0 md:py-5`}
+      className={`top-4 flex h-[100px] w-full flex-row items-center justify-between border-t-2 px-5 shadow-md md:h-[150px] md:flex-col md:justify-center md:rounded-md md:border-0 md:py-5`}
     >
-      <div className="flex  items-center justify-between md:w-full">
+      <div className="flex items-center justify-between md:w-full">
         <label className="hidden md:inline md:text-base">Course Price:</label>
         <strong className="text-base text-red-500">
           <span>{course.price}</span>
@@ -53,14 +53,14 @@ function AddToCart({ course }) {
         <div className="mt-5 flex w-full items-center justify-between rounded-3xl border-2 px-5 py-2">
           <button
             onClick={handleDecreaseItemQuantity}
-            className="rounded-full bg-green-300 px-2  text-xl font-bold text-slate-800"
+            className="rounded-full bg-green-300 px-2 text-xl font-bold text-slate-800"
           >
             -
           </button>
           <span className="text-sm font-semibold">{itemQuantity || '---'}</span>
           <button
             onClick={handleIncreaseItemQuantity}
-            className="rounded-full bg-green-300 px-2  text-xl font-bold text-slate-800"
+            className="rounded-full bg-green-300 px-2 text-xl font-bold text-slate-800"
           >
             +
           </button>

@@ -1,7 +1,7 @@
 import { LiaComments } from 'react-icons/lia';
 import { PiStudentLight } from 'react-icons/pi';
 import { Link } from 'react-router-dom';
-import { COURSES_PAGE } from '@/utils/constants';
+import { COURSES_PAGE } from '@/utils/constants.ts';
 import { motion } from 'framer-motion';
 
 function HomeSubject() {

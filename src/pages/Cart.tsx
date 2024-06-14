@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import CartTable from '@/features/cart/CartTable.tsx';
 import { useState } from 'react';
-import { CHECKOUT_PAGE } from '@/utils/constants';
+import { CHECKOUT_PAGE } from '@/utils/constants.ts';
 import {
   deleteItem,
   getShoppingCart,

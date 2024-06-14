@@ -1,13 +1,9 @@
 import { Link } from 'react-router-dom';
 import { FaRegComment } from 'react-icons/fa';
+import { BlogPost } from '@/models';
 
 type PostProp = {
-  item: {
-    title: string;
-    image: string;
-    content: string;
-    category: string;
-  };
+  item: BlogPost;
 };
 
 function BlogPostItem({ item }: PostProp) {

@@ -8,6 +8,7 @@ function HomeCustomerReviews() {
     function () {
       async function fetchReviews() {
         const data = await getReviews();
+
         setReviews(data.slice(Math.max(data.length - 3, 0)));
       }
 

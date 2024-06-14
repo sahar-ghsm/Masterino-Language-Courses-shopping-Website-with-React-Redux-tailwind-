@@ -1,6 +1,6 @@
 import { Form, redirect, useActionData, useNavigation } from 'react-router-dom';
 import { createOrder } from '@/services/apiOrders';
-import { isValidPhone } from '@/utils/helpers';
+import { isValidPhone } from '@/utils/helpers.ts';
 
 const cart = [
   {

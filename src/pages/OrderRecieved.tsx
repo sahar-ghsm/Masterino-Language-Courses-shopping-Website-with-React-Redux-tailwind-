@@ -1,7 +1,7 @@
 import { Link, useFetcher, useLoaderData } from 'react-router-dom';
 import { getOrderById, updateOrder } from '@/services/apiOrders';
-import { dateStringFormat } from '@/utils/helpers';
-import { HOME_PAGE } from '@/utils/constants';
+import { dateStringFormat } from '@/utils/helpers.ts';
+import { HOME_PAGE } from '@/utils/constants.ts';
 
 function OrderRecieved() {
   const order = useLoaderData();
@@ -9,15 +9,15 @@ function OrderRecieved() {
 
   return (
     <div className="mx-auto max-w-screen-lg p-5">
-      <p className="md:text-md my-5 text-base  font-bold text-lime-500">
+      <p className="md:text-md my-5 text-base font-bold text-lime-500">
         Thank you, your order has been received
       </p>
-      <p className="md:text-md my-5 hidden text-base  font-bold text-lime-500">
+      <p className="md:text-md my-5 hidden text-base font-bold text-lime-500">
         If you have a discount code and you didn't apply it before yourpurchase
         , you can apply it now
       </p>
       <fetcher.Form method="POST">
-        <div className=" flex hidden items-center justify-between gap-3">
+        <div className="flex hidden items-center justify-between gap-3">
           <input
             placeholder="discount code"
             name="discount"
@@ -30,7 +30,7 @@ function OrderRecieved() {
           </button>
         </div>
       </fetcher.Form>
-      <div className="flex flex-col gap-4 rounded-md bg-slate-100 p-5 text-xs  md:text-sm">
+      <div className="flex flex-col gap-4 rounded-md bg-slate-100 p-5 text-xs md:text-sm">
         <div className="flex items-center justify-between">
           <span>Order Number:</span>
           <span className="text-end text-xs font-semibold">{order.id}</span>
@@ -55,7 +55,7 @@ function OrderRecieved() {
       </div>
       <div className="text-center">
         <Link
-          className="mt-8 inline-block rounded-md border-2 bg-blue-400  p-3 font-semibold text-slate-100"
+          className="mt-8 inline-block rounded-md border-2 bg-blue-400 p-3 font-semibold text-slate-100"
           to={HOME_PAGE}
         >
           Back to Home

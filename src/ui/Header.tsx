@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import SearchOrder from '@/features/order/SearchOrder.tsx';
 import Username from '@/features/user/Username.tsx';
 import Profile from '@/features/user/Profile.tsx';
-import { HOME_PAGE } from '@/utils/constants';
+import { HOME_PAGE } from '@/utils/constants.ts';
 import { useState } from 'react';
 
 function Header() {

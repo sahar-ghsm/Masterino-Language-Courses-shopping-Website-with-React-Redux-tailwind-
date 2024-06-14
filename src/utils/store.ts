@@ -1,5 +1,5 @@
 import cartSlice from '@/features/cart/cartSlice';
-import userSlice from '@/features/user/userSlice';
+import userSlice from '@/features/user/userSlice.ts';
 import { configureStore } from '@reduxjs/toolkit';
 
 const store = configureStore({

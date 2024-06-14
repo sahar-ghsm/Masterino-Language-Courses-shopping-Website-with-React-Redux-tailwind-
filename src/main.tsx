@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
 import { Provider } from 'react-redux';
-import store from './utils/store.js';
+import store from './utils/store.ts';
 // {
 //   setSelectedPage: (value: string) =>void;
 // }

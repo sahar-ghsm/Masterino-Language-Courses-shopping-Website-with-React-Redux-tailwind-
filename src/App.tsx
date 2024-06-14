@@ -29,7 +29,7 @@ import {
   NEW_ORDER,
   CHECKOUT_PAGE,
   LOGIN_PAGE,
-} from './utils/constants';
+} from './utils/constants.ts';
 
 const router = createBrowserRouter([
   {

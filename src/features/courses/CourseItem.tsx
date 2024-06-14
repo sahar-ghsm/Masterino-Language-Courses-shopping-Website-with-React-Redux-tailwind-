@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom';
-import Rating from '@/ui/Rating';
-import { COURSE_PAGE } from '@/utils/constants';
+import Rating from '@/ui/Rating.tsx';
+import { COURSE_PAGE } from '@/utils/constants.ts';
+import { Course } from '@/models.ts';
 
-function CourseItem({ item }) {
+type Props = {
+  item: Course;
+};
+
+function CourseItem({ item }: Props) {
   return (
     <Link
       to={COURSE_PAGE(item.id)}
@@ -23,7 +28,7 @@ function CourseItem({ item }) {
             <span className="inline-block rounded-md bg-lime-100 px-2 py-1 text-xs text-lime-600 md:text-sm">
               {item.category}
             </span>
-            <Rating value={item.rating} />
+            <Rating value={item.rating_average} />
           </div>
           <div className="my-2 flex items-center justify-between">
             <span>

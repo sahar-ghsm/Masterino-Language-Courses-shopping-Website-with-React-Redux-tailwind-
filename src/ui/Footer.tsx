@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import { TERMS_OF_USE_PAGE } from '@/utils/constants';
+import { TERMS_OF_USE_PAGE } from '@/utils/constants.ts';
 
 function Footer() {
   return (
     <footer className="w-100 mx-auto mt-10 bg-slate-300 py-5 pb-2 md:pt-10">
-      <div className="mx-auto  max-w-screen-lg text-xs md:text-base">
-        <div className=" flex flex-col items-center">
+      <div className="mx-auto max-w-screen-lg text-xs md:text-base">
+        <div className="flex flex-col items-center">
           <div className="flex w-full justify-center gap-4 px-5">
             <div className="flex-1">
               <div className="flex flex-auto flex-col gap-2">

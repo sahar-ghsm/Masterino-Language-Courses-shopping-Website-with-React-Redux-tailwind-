@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleteItem, getShoppingCart } from './cartSlice';
 import { useFetcher } from 'react-router-dom';
 import { useEffect } from 'react';
-import { COURSES_PAGE } from '@/utils/constants';
+import { COURSES_PAGE } from '@/utils/constants.ts';
 
 function CartTable() {
   const shoppingCart = useSelector(getShoppingCart);
@@ -24,7 +24,7 @@ function CartTable() {
   }
 
   return (
-    <div className="md:mx-5 ">
+    <div className="md:mx-5">
       <table>
         <thead className="text-xs md:text-base">
           <tr className="w-full border-b-2">
@@ -36,7 +36,7 @@ function CartTable() {
             <th className="w-[5%] text-transparent">actions</th>
           </tr>
         </thead>
-        <tbody className=" gap-4">
+        <tbody className="gap-4">
           {shoppingCart.map((item, index) => (
             <tr
               key={index}
@@ -65,9 +65,9 @@ function CartTable() {
                   <span>$</span>
                 </span>
               </td>
-              <td className=" pt-2 text-center text-red-500">
+              <td className="pt-2 text-center text-red-500">
                 <button onClick={(e) => deleteCartItem(item.id)}>
-                  <RiDeleteBin6Line className=" mx-auto" size={20} />
+                  <RiDeleteBin6Line className="mx-auto" size={20} />
                 </button>
               </td>
             </tr>

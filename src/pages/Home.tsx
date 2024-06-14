@@ -4,7 +4,7 @@ import HomeAdvertisement from '@/ui/HomeAdvertisement.tsx';
 import HomeCustomerReviews from '@/ui/HomeCustomerReviews.tsx';
 import { Link } from 'react-router-dom';
 import { FaChevronRight } from 'react-icons/fa';
-import { BLOG_PAGE } from '@/utils/constants';
+import { BLOG_PAGE } from '@/utils/constants.ts';
 import LatestPosts from '@/features/blog/LatestPosts.tsx';
 import { motion } from 'framer-motion';
 

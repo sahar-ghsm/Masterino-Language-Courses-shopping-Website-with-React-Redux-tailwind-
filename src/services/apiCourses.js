@@ -1,4 +1,3 @@
-import { API_URL } from '@/utils/constants';
 import { supabase } from './supabase';
 
 export async function getCourses() {

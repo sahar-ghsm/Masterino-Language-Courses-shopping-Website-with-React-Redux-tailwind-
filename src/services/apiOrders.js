@@ -1,4 +1,4 @@
-import { API_URL } from '@/utils/constants';
+import { API_URL } from '@/utils/constants.ts';
 
 export async function getOrderById(orderId) {
   try {

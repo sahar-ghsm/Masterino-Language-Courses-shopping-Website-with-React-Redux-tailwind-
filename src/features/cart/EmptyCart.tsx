@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { COURSES_PAGE } from '@/utils/constants';
+import { COURSES_PAGE } from '@/utils/constants.ts';
 
 function EmptyCart() {
   return (

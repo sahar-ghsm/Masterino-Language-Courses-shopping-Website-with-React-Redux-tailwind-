@@ -1,16 +1,33 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { getAddress } from '@/services/apiUsers';
+import { createAsyncThunk, createSlice, AsyncThunk } from '@reduxjs/toolkit';
+import { getAddress } from '@/services/apiUsers.ts';
 
-export const fetchAddress = createAsyncThunk(
+interface AddressData {
+  position: Position;
+  address: string;
+}
+
+interface AddressObject {
+  locality: string;
+  city: string;
+  postcode: string;
+  countryName: string;
+}
+
+interface Position {
+  latitude: number;
+  longitude: number;
+}
+
+export const fetchAddress: AsyncThunk<AddressData, void, {}> = createAsyncThunk(
   'user/fetchAddress',
-  async function () {
-    const positionObject = await getPosition();
-    const position = {
+  async () => {
+    const positionObject: Position = (await getPosition()) as Position;
+    const position: Position = {
       latitude: positionObject.latitude,
       longitude: positionObject.longitude,
     };
 
-    const addressObject = await getAddress(position);
+    const addressObject: AddressObject = await getAddress(position);
     const address = `${addressObject?.locality}, ${addressObject?.city} ${addressObject.postcode}, ${addressObject.countryName}`;
     return { position, address };
   },

@@ -1,4 +1,4 @@
-import { API_URL } from '@/utils/constants';
+import { API_URL } from '@/utils/constants.ts';
 import { supabase } from './supabase';
 
 export async function getBlogPosts() {

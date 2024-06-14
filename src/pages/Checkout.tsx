@@ -5,7 +5,11 @@ import {
   useActionData,
   useNavigation,
 } from 'react-router-dom';
-import { HOME_PAGE, LOGIN_PAGE, ORDER_RECIEVED_PAGE } from '@/utils/constants';
+import {
+  HOME_PAGE,
+  LOGIN_PAGE,
+  ORDER_RECIEVED_PAGE,
+} from '@/utils/constants.ts';
 import { createOrder } from '@/services/apiOrders';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -13,7 +17,7 @@ import {
   getShoppingCart,
   clearCart,
 } from '@/features/cart/cartSlice';
-import store from '@/utils/store';
+import store from '@/utils/store.ts';
 import { fetchAddress } from '@/features/user/userSlice';
 
 function CheckoutPage() {
@@ -39,12 +43,10 @@ function CheckoutPage() {
         to enter.
       </div>
       <div className="pt-8">
-        <span className="text-md font-semibold "> Billing Details</span>
+        <span className="text-md font-semibold"> Billing Details</span>
 
         <div className={`my-3 text-xs text-red-500`}>
-          {formErrors?.map((error) => (
-            <span key={error}>{error}</span>
-          ))}
+          {formErrors?.map((error) => <span key={error}>{error}</span>)}
         </div>
         <Form method="POST" className="mt-2 text-sm">
           <div className="mb-5">
@@ -132,8 +134,8 @@ function CheckoutPage() {
               </span>
             </div>
           </div>
-          <div className="mb-3 rounded-md border-2 p-2 text-sm ">
-            <div className="flex items-center  font-semibold">
+          <div className="mb-3 rounded-md border-2 p-2 text-sm">
+            <div className="flex items-center font-semibold">
               <input
                 className="rounded-md pt-1"
                 type="radio"
@@ -142,7 +144,7 @@ function CheckoutPage() {
                 checked
                 onChange={setPaymentMethod}
               />
-              <label className="ml-2 ">Payment on delivery</label>
+              <label className="ml-2">Payment on delivery</label>
             </div>
             <p className="mt-2 text-xs">Cash payment after delivery</p>
           </div>

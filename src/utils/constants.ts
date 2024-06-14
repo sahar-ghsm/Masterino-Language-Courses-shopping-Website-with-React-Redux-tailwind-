@@ -1,21 +1,25 @@
-export const API_URL = '/.netlify/functions/data-mock/';
+import { Card } from '@/models.ts';
 
-export const COURSES_PAGE = '/courses';
-export const BLOG_PAGE = '/blog';
-export const TERMS_OF_USE_PAGE = '/terms-of-use';
-export const HOME_PAGE = '/';
-export const ORDER_PAGE = (orderId) => `/order/${orderId}`;
-export const COURSE_PAGE = (courseId) => `${COURSES_PAGE}/${courseId}`;
-export const CART_ADDRESS = '/cart';
-export const CHECKOUT_PAGE = '/checkout';
-export const NEW_ORDER = '/order/new';
-export const LOGIN_PAGE = '/login';
-export const ORDER_RECIEVED_PAGE = (orderId) => `/order-received/${orderId}`;
+export const API_URL: string = '/.netlify/functions/data-mock/';
 
-export const LOREM_CONTENT =
+export const COURSES_PAGE: string = '/courses';
+export const BLOG_PAGE: string = '/blog';
+export const TERMS_OF_USE_PAGE: string = '/terms-of-use';
+export const HOME_PAGE: string = '/';
+export const ORDER_PAGE: (string) => string = (orderId) => `/order/${orderId}`;
+export const COURSE_PAGE: (string) => string = (courseId) =>
+  `${COURSES_PAGE}/${courseId}`;
+export const CART_ADDRESS: string = '/cart';
+export const CHECKOUT_PAGE: string = '/checkout';
+export const NEW_ORDER: string = '/order/new';
+export const LOGIN_PAGE: string = '/login';
+export const ORDER_RECIEVED_PAGE: (string) => string = (orderId) =>
+  `/order-received/${orderId}`;
+
+export const LOREM_CONTENT: string =
   'Lorem Epsom is a fake text with the production of incomprehensible simplicity from the printing industry, and with the use of graphic designers, printers and texts, but also newspapers and magazines in columns and lines as necessary, and for the current conditions of the technology required, and diverse applications with the aim of improving the tools It is practical, many books in sixty-three percent of the past, present and future require a lot of knowledge from the society and experts, to create more knowledge for computer designers, especially creative designers, and the leading culture in Persian language. In this case, we can hope that all the difficulty in providing solutions, and the difficult conditions of typing will end, and the time required, including the typesetting of the main achievements, and answering the continuous questions of the existing world of design will be basically used.';
 
-export const initialCart = [
+export const initialCart: Array<Card> = [
   {
     title: 'Oriental Metal Fish',
     image: 'https://loremflickr.com/640/480/business?lock=8338827347230720',
